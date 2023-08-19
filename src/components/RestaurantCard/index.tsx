@@ -19,6 +19,10 @@ const RestaurantCard: FC<RestaurantCardProps> = ({ restaurant, onVisibilityChang
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isVisible]);
 
+  const starNotInteger = (index: number, restaurant: RestaurantModel) => index < restaurant.rating
+    ? "star_half"
+    : "star_outline";
+
   return (
     <div
       className={styles.restaurantCard}
@@ -47,9 +51,7 @@ const RestaurantCard: FC<RestaurantCardProps> = ({ restaurant, onVisibilityChang
                   <span className={`material-icons`}>
                     {index < Math.floor(restaurant.rating ?? 0)
                       ? "star"
-                      : index < restaurant.rating
-                      ? "star_half"
-                      : "star_outline"}
+                      : starNotInteger(index, restaurant)}
                   </span>
                 </div>
               ))}

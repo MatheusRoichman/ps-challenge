@@ -9,9 +9,16 @@ import apiRestClient from "@/services/rest-client/api-rest-client";
 import componentsStyles from "@/styles/components.module.scss";
 import variables from "@/styles/variables.module.scss";
 import { AxiosError } from "axios";
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import styles from "./page.module.scss";
+
+const EndOfResults: FC<{ lastResponse: RestaurantModel[] | null }> = ({ lastResponse }) =>
+    lastResponse && lastResponse.length === 0 ? (
+      <div className={styles.noResultsWrapper}>
+        <p className={styles.noResultsWrapper__text}>End of results</p>
+      </div>
+    ) : null;
 
 export default function Home() {
   const [page, setPage] = useState(0);
@@ -134,13 +141,7 @@ export default function Home() {
         </div>
       </div>
       <div className={styles.bottomInfo}>
-        {loading ? (
-          <ThreeDotsLoading />
-        ) : lastResponse && lastResponse.length === 0 ? (
-          <div className={styles.noResultsWrapper}>
-            <p className={styles.noResultsWrapper__text}>End of results</p>
-          </div>
-        ) : null}
+        {loading ? <ThreeDotsLoading /> : <EndOfResults lastResponse={lastResponse} />}
       </div>
     </div>
   );

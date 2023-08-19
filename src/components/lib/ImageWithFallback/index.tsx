@@ -1,7 +1,7 @@
 import Image, { ImageProps } from "next/image";
 import { FC, useEffect, useState } from "react";
 
-interface ImageWithFallbackProps extends ImageProps {
+interface ImageWithFallbackProps extends Omit<ImageProps, "onError"> {
   fallback?: string;
 }
 

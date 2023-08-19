@@ -7,10 +7,9 @@ const config: Config.InitialOptions = {
   transform: {
     '^.+\\.ts?$': 'ts-jest',
   },
-  moduleNameMapper: { // Required to transform the css files and prevent parsing errors when running our tests
-      "\\.(css|less|scss|sss|styl)$": "<rootDir>/node_modules/jest-css-modules",
-      // configure import alias (@/) to point to the src directory
-      "^@/(.*)$": "<rootDir>/src/$1",
+  moduleNameMapper: { 
+      "\\.(css|less|scss|sss|styl)$": "<rootDir>/node_modules/jest-css-modules", // Required to transform the css files and prevent parsing errors when running our tests
+      "^@/(.*)$": "<rootDir>/src/$1", // configure import alias (@/) to point to the src directory
   },
   testEnvironment: "jsdom", // Required to set the test environment to jsdom, this is the default test environment for Jest
   verbose: true, // I like my tests to be verbose, it gives me a better picture of what’s going on
