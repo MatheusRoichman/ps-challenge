@@ -1,0 +1,30 @@
+@use "../styles/variables.module" as *;
+
+.categoriesWrapper {
+  display: flex;
+  align-items: stretch;
+  gap: 1rem;
+  padding: 1rem 0;
+  overflow-x: auto;
+
+  &__itemDivider {
+    border-bottom-width: 2px;
+    margin: 0.25rem 0;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    &__itemDivider {
+      display: none;
+    }
+  }
+}
+
+.restaurantsWrapper {
+  margin: 1rem auto;
+}
+
+.bottomInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
