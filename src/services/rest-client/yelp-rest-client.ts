@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const yelpRestClient = axios.create({
-  baseURL: "https://api.yelp.com/v3",
+  baseURL: process.env.NEXT_PUBLIC_YELP_API_URL,
 });
 
 yelpRestClient.interceptors.request.use(
