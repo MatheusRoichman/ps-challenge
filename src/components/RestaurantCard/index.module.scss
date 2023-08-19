@@ -1,0 +1,119 @@
+@use "../../styles/variables.module" as *;
+
+.restaurantCard {
+  padding: 0.5rem 0;
+  transition: box-shadow 0.2s ease-in-out;
+  position: static;
+  margin-bottom: 0;
+  
+  &__content {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  }
+
+  &__image {
+    min-width: 150px;
+    min-height: 150px;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    background-color: #eee;
+  }
+
+  &__divider {
+    display: none;
+  }
+
+  &__infoWrapper {
+    flex: 1;
+  }
+
+  &__title {
+    margin: 1rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    &__ratingBar {
+      display: flex;
+      align-items: center;
+      margin-left: -0.3rem;
+      color: $color-highlight;
+    }
+  }
+  
+  &__button {
+    background: linear-gradient(to right, $color-primary, $color-secondary);
+    text-transform: uppercase;
+    padding: 0.75rem 2.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: opacity 0.2s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.9;
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    margin-bottom: 1rem;
+    position: relative;
+    border-radius: 0.75rem;
+    box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.1);
+
+    &__content {
+      flex-direction: column;
+      max-width: 200px;
+      margin: 0 auto;
+    }
+
+    &__image {
+      width: 100%;
+      margin: 0 auto;
+      height: 100%;
+      aspect-ratio: 1 / 1;
+    }
+
+    &__title {
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1.25rem;
+    }
+
+    &__divider {
+      display: block;
+    }
+
+    &__info {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1.75rem;
+    }
+
+    &__button {
+      position: absolute;
+      bottom: -1rem;
+      padding: 0.75rem 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
