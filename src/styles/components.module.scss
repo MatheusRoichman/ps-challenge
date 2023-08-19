@@ -1,0 +1,36 @@
+@use "variables.module" as *;
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.grid {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(1, minmax(250px, 1fr));
+  
+  @media (min-width: $breakpoint-lg) {
+    gap: 1rem;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+  }
+}
+
+.divider {
+  margin: 1rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &--scrollable {
+    overflow-x: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}

@@ -1,0 +1,21 @@
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+$color-primary: #ee774e;
+$color-secondary: #f5b98e;
+$color-highlight: #f1b840;
+
+:export {
+  breakpointXs: $breakpoint-xs;
+  breakpointSm: $breakpoint-sm;
+  breakpointMd: $breakpoint-md;
+  breakpointLg: $breakpoint-lg;
+  breakpointXl: $breakpoint-xl;
+  
+  colorPrimary: $color-primary;
+  colorSecondary: $color-secondary;
+  colorHighlight: $color-highlight;
+}
