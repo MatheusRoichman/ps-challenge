@@ -45,7 +45,6 @@ export default function Home() {
   });
 
   useEffect(() => {
-    if (loading) return;
     setLoading(true);
 
     apiRestClient
